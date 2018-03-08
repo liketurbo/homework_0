@@ -1,15 +1,37 @@
-body
+body, html
   margin: 0
   padding: 0
   font-size: 15px
+  width: 100%
+  height: 100%
+
+body
+  display: grid
+  grid-template-columns: repeat(12, 1fr)
+  grid-template-rows: 2 * 46px 1fr 46px
+
+.header
+  display: flex
+  grid-row: 1
+  grid-column: 3/11
+  justify-content: flex-start
+  align-items: center
 
 .container
-  margin: 0 auto
-  width: 8/12 * 100%
   display: grid
-  grid-template-columns: 1fr 1fr 1fr
+  grid-row: 2
+  grid-column: 3/11
+  grid-template-columns: repeat(3, 1fr)
   grid-gap: 1rem
 
-.titlePicDiscWhole
-  display: grid
-  grid-template-columns: 2fr 1fr
+  .titlePicDiscWhole
+    display: grid
+    // grid-auto-rows: 243px
+
+  .titlePicDescHalf
+    display: grid
+    // grid-auto-rows: 305px
+
+  .titlePic, .titleDisc
+    display: grid
+    // grid-auto-rows: 234px
