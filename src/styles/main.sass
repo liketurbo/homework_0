@@ -1,3 +1,5 @@
+@import './_variables.sass'
+
 body, html
   margin: 0
   padding: 0
@@ -17,21 +19,75 @@ body
   justify-content: flex-start
   align-items: center
 
+.footer
+  display: flex
+  grid-row: 3
+  grid-column: 3/11
+
 .container
   display: grid
   grid-row: 2
   grid-column: 3/11
-  grid-template-columns: repeat(3, 1fr)
+  grid-template-columns: repeat(6, 1fr)
   grid-gap: 1rem
+  grid-auto-columns: min-content
 
-  .titlePicDiscWhole
+  .title
+    @include ystext-bold
+    font-size: 19px
+
+  .description
+    @include ystext-medium
+    font-size: 14px
+
+  .titlePicDescWhole
+    grid-column: span 6
     display: grid
-    // grid-auto-rows: 243px
+    grid-template-columns: 2fr 1fr
+    grid-template-rows: 1fr 3fr 1fr
+    .image
+      grid-column: 1
+      grid-row: 3 span
+    .title
+      grid-column: 2
+      grid-row: 1
+    .description
+      grid-column: 2
+      grid-row: 2
+    .buttons
+      grid-column: 2
+      grid-row: 3
 
   .titlePicDescHalf
+    grid-column: span 3
     display: grid
-    // grid-auto-rows: 305px
+    grid-template-columns: 6fr 1fr
+    grid-template-rows: repeat(3, auto-fill)
+    .image
+      grid-column: 2 span
+      grid-row: 2
+    .title
+      grid-column: 2 span
+      grid-row: 1
+    .description
+      grid-column: 1
+      grid-row: 3
+    .buttons
+      grid-column: 2
+      grid-row: 3
 
-  .titlePic, .titleDisc
+  .titlePic
+    grid-column: span 2
     display: grid
-    // grid-auto-rows: 234px
+    grid-template-columns: 6fr 1fr
+    grid-template-rows: auto-fill auto-fill auto-fill
+    .image
+      grid-column: 2 span
+      grid-row: 2 / 2 span
+    .title
+      grid-column: 2 span
+      grid-row: 1
+
+  .titleDesc
+    grid-column: span 2
+    display: grid

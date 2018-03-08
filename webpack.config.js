@@ -6,6 +6,7 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import PurifyCSSPlugin from 'purifycss-webpack';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 const inProduction = process.env.mode === 'production';
 
@@ -60,5 +61,6 @@ export default {
       template: path.join(__dirname, './src/index.html'),
       hash: true,
     }),
+    new CopyWebpackPlugin([{ from: './src/images', to: 'img' }]),
   ],
 };
