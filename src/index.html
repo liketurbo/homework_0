@@ -7,10 +7,13 @@
     <title>Yandex Dzen</title>
   </head>
   <body>
-    <div class="header">Yandex Dzen</div>
+    <div class="header"></div>
     <div class="container"></div>
     <div class="footer"></div>
 
+    <script type="text/template" id="logo">
+      <div class="image"><img src="<$=image$>"></div>
+    </script>
     <script type="text/template" id="titlePicDescHalf">
       <div class="titlePicDescHalf">
         <div class="image"><img src="<$=image$>"></div>
@@ -38,7 +41,11 @@
       <div class="titleDesc">
         <div class="title"><$=title$></div>
         <div class="description"><$=description$></div>
-        <div class="buttons"></div>
+        <div class="buttons">
+          <span><$=channelName$></span>
+          <button><img src="img/Actions.png"></button>
+          <button><img src="img/Heart.png"></button>
+        </div>
       </div>
     </script>
   </body>

@@ -31,14 +31,25 @@ body
   grid-template-columns: repeat(6, 1fr)
   grid-gap: 1rem
   grid-auto-columns: min-content
+  grid-auto-flow: row dense
 
   .title
     @include ystext-bold
     font-size: 19px
 
+  .image > img
+    height: 100%
+    width: 100%
+
   .description
     @include ystext-medium
     font-size: 14px
+
+  .buttons > button
+    outline: 0
+    border: 0
+    background: 0
+    cursor: pointer
 
   .titlePicDescWhole
     grid-column: span 6
@@ -91,3 +102,23 @@ body
   .titleDesc
     grid-column: span 2
     display: grid
+    grid-template-columns: 1fr
+    grid-template-rows: auto-fill auto-fill auto-fill
+    .buttons
+      display: grid
+      grid-template-rows: 1fr
+      grid-auto-columns: 6fr 1fr 1fr
+      align-items: center
+    .buttons > span
+      grid-row: 1
+      grid-column: 1
+      @include ystext-bold
+
+    .buttons > button:first-child
+      grid-row: 1
+      grid-column: 2
+    .buttons > button:last-child
+      grid-row: 1
+      grid-column: 3
+
+@import './_media.sass'

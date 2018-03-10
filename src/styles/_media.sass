@@ -1,0 +1,24 @@
+@media screen and (max-width: 992px)
+  .header
+    grid-column: 3/11
+  .container
+    grid-column: 3/11
+
+@media screen and (max-width: 768px)
+  .header
+    grid-column: 2/12
+  .container
+    grid-column: 2/12
+
+    .titlePicDescHalf
+      grid-column: span 6
+    .titleDesc, .titlePic
+      grid-column: span 3
+
+@media screen and (max-width: 576px)
+  body
+    grid-template-columns: repeat(24, 1fr)
+  .header
+    grid-column: 2/24
+  .container
+    grid-column: 2/24
