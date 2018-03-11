@@ -23,42 +23,35 @@ const titleDesc = temp(document.getElementById('titleDesc').innerHTML);
 
 const renderHTML = () => {
   size = checkScreenSize();
-  document.querySelector('.container').innerHTML = '';
-
   data.forEach((elem) => {
     const regExp = /(.+?)(\.[^.]*$|$)/g;
     const arr = regExp.exec(elem.image);
 
-    let image = '';
-    if (size === 'l') {
-      image = `${arr[1]}@3x${arr[2]}`;
-    } else if (size === 'm') {
-      image = `${arr[1]}@2x${arr[2]}`;
-    } else {
-      image = `${arr[0]}`;
-    }
+    const imageSet = [
+      `${arr[1]}@3x${arr[2]}`,
+      `${arr[1]}@2x${arr[2]}`,
+      `${arr[0]}`,
+    ];
 
     if (elem.size === 'l') {
       if (size === 's' || size === 'm') {
-        append(titlePicDescHalf({ ...elem, image }), '.container');
+        append(titlePicDescHalf({ ...elem, imageSet }), '.container');
         changeTitleColor('.titlePicDescHalf', elem.titleColor);
       } else {
-        append(titlePicDescWhole(elem), '.container');
+        append(titlePicDescWhole({ ...elem, imageSet }), '.container');
         changeTitleColor('.titlePicDescWhole', elem.titleColor);
       }
     } else if (elem.size === 'm') {
-      append(titlePicDescHalf({ ...elem, image }), '.container');
+      append(titlePicDescHalf({ ...elem, imageSet }), '.container');
       changeTitleColor('.titlePicDescHalf', elem.titleColor);
     } else if (elem.description) {
       append(titleDesc(elem), '.container');
       changeTitleColor('.titleDesc', elem.titleColor);
     } else {
-      append(titlePic({ ...elem, image }), '.container');
+      append(titlePic({ ...elem, imageSet }), '.container');
       changeTitleColor('.titlePic', elem.titleColor);
     }
   });
 };
 
 renderHTML();
-window.addEventListener('orientationchange', () => renderHTML());
-window.addEventListener('resize', () => renderHTML());

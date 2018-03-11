@@ -16,25 +16,52 @@
     </script>
     <script type="text/template" id="titlePicDescHalf">
       <div class="titlePicDescHalf">
-        <div class="image"><img src="<$=image$>"></div>
+        <div class="image">
+          <picture>
+            <source media="(min-width: 992px)" srcset="<$=imageSet[0]$>">
+            <source media="(min-width: 768px)" srcset="<$=imageSet[1]$>">
+            <img src="<$=imageSet[2]$>">
+          </picture>
+        </div>
         <div class="title"><$=title$></div>
         <div class="description"><$=description$></div>
-        <div class="buttons"></div>
+        <div class="buttons">
+          <button><img src="img/Actions.png"></button>
+          <button><img src="img/Heart.png"></button>
+        </div>
       </div>
     </script>
     <script type="text/template" id="titlePicDescWhole">
       <div class="titlePicDescWhole">
-        <div class="image"><img src="<$=image$>"></div>
+        <div class="image">
+          <picture>
+            <source media="(min-width: 992px)" srcset="<$=imageSet[0]$>">
+            <source media="(min-width: 768px)" srcset="<$=imageSet[1]$>">
+            <img src="<$=imageSet[2]$>">
+          </picture>
+        </div>
         <div class="title"><$=title$></div>
         <div class="description"><$=description$></div>
-        <div class="buttons"></div>
+        <div class="buttons">
+          <button><img src="img/Actions.png"></button>
+          <button><img src="img/Heart.png"></button>
+        </div>
       </div>
     </script>
     <script type="text/template" id="titlePic">
       <div class="titlePic">
-        <div class="image"><img src="<$=image$>"></div>
+        <div class="image">
+          <picture>
+            <source media="(min-width: 992px)" srcset="<$=imageSet[0]$>">
+            <source media="(min-width: 768px)" srcset="<$=imageSet[1]$>">
+            <img src="<$=imageSet[2]$>">
+          </picture>
+        </div>
         <div class="title"><$=title$></div>
-        <div class="buttons"></div>
+        <div class="buttons">
+          <button><img src="img/Actions.png"></button>
+          <button><img src="img/Heart.png"></button>
+        </div>
       </div>
     </script>
     <script type="text/template" id="titleDesc">
